@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="javascrip/logIn.js"></script>
+
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="logIn" onsubmit="handleLoginForm(event)">
+        <select id="authType" name="authType">
+            <option value="email">Email</option>
+            <option value="user">Username</option>
+        </select>
+
+        <input type="text" id="credential" name="credential" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Log In">
+    </form>
+</body>
+</html>
