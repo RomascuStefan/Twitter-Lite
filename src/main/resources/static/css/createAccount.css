@@ -1,0 +1,81 @@
+/* Stiluri generale pentru body */
+body {
+    margin: 0; /* Elimină orice margin implicit pentru a alinia corect la marginea paginii */
+    padding: 0; /* Elimină padding-ul implicit */
+    display: flex; /* Folosește flexbox pentru a permite alinierea centrată */
+    flex-direction: column; /* Ordonează conținutul într-o coloană */
+    justify-content: flex-start; /* Aliniază conținutul la începutul containerului */
+    align-items: center; /* Centrează conținutul pe orizontală */
+    height: 100vh; /* Asigură-te că body-ul ocupă întreaga înălțime a viewport-ului */
+}
+
+h2 {
+    margin-top: 20px; /* Spațiu de la partea superioară a paginii */
+    text-align: center; /* Centrează textul pe orizontală */
+}
+
+
+/* Stilizarea formularului */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+
+
+/* Stilizează fiecare etichetă din formular */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+/* Stilizează fiecare input din formular */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding-ul și border-ul în lățimea elementului */
+}
+
+/* Stilizează butonul de submit */
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #5C67F2;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #4a54e1; /* Schimbă culoarea de fundal la hover */
+}
+
+/* Adaugă un mic spațiu între elementele input */
+input[type="text"] + label,
+input[type="email"] + label,
+input[type="password"] + label {
+    margin-top: 20px;
+}
+
+
+footer {
+    text-align: center;
+    background-color: #007bff;
+    color: #FFF;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#twitter-heading {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    background-color: #007bff;
+    color: #FFF;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+button {
+    margin: 10px auto;
+    display: block;
+}

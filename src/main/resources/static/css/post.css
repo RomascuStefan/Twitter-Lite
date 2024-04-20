@@ -1,0 +1,56 @@
+textarea {
+    width: 80%;
+    height: 150px;
+    margin: 10px;
+    padding: 8px;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+#postButton {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#postButton:hover {
+    background-color: darkblue;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #003d7a;
+}
+
+footer {
+    text-align: center;
+    background-color: #007bff;
+    color: #FFF;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

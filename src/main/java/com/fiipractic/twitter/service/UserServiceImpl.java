@@ -12,15 +12,13 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     private final UserDAO userRepository;
-    private final UserUtil userUtil;
 
     @Autowired
-    public UserServiceImpl(UserDAO userRepository, UserUtil userUtil) {
+    public UserServiceImpl(UserDAO userRepository) {
         this.userRepository = userRepository;
-        this.userUtil = userUtil;
     }
 
     @Override
@@ -38,41 +36,56 @@ public class UserServiceImpl implements UserService{
         return userRepository.getUserByEmail(email);
     }
 
-
-    @Override
-    public void updateUser(String id, User user) {
-        userRepository.updateUser(user.getFirst_name(), user.getLast_name(), user.getEmail(), user.getPassword(), id);
-    }
-
-    @Override
-    public void patchUser(String id, Map<String, String> partialUser) {
-        User user = userRepository.getUserById(id);
-
-        userUtil.patchUser(user, partialUser);
-
-        userRepository.updateUser(user.getFirst_name(), user.getLast_name(), user.getEmail(), user.getPassword(), id);
-    }
-
-    @Override
-    public void deleteUser(String id) {
-        userRepository.deleteUser(id);
-    }
-
     @Override
     public void authenticateUser(LogInForm logInForm) {
-        User user=null;
-        try{
-            if(logInForm.getAuthType().equals("email"))
-                user=getUserByEmail(logInForm.getCredential());
-            else
-                user =  getUserById(logInForm.getCredential());
-        }catch (UserNotFoundException ex)
-        {
-            throw new UserNotFoundException("User-ul nu exista");
-        }
+        User user;
 
-        if(!user.getPassword().equals(logInForm.getPassword()))
-            throw new UserNotFoundException("User-ul nu exista");
+        if (logInForm.getAuthType().equals("email"))
+            user = getUserByEmail(logInForm.getCredential());
+        else
+            user = getUserById(logInForm.getCredential());
+
+
+        if (!user.getPassword().equals(logInForm.getPassword()))
+            throw new UserNotFoundException("Parola este gresita");
+
 
     }
+
+    @Override
+    public void followUser(String credential, String followCredential) {
+        userRepository.followUser(credential, followCredential);
+    }
+
+    @Override
+    public void unfollowUser(String credential, String followCredential) {
+        userRepository.unfollowUser(credential, followCredential);
+    }
+
+    @Override
+    public boolean isFollowing(String credential, String followCredential) {
+        return userRepository.isFollowing(credential, followCredential);
+    }
+
+    @Override
+    public int getFollowingNumber(String credential) {
+        return userRepository.getFollowingNumber(credential);
+    }
+
+    @Override
+    public int getFollowerNumber(String credential) {
+        return userRepository.getFollowerNumber(credential);
+    }
+
+    @Override
+    public List<String> getUsersListFollowedBy(String credential) throws Exception {
+        return userRepository.getUsersListFollowed(credential);
+    }
+
+    @Override
+    public List<String> getUsersListFollowing(String credential) throws Exception {
+        return userRepository.getUsersListFollowing(credential);
+    }
+
+
 }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+    <link rel="stylesheet" href="css/post.css">
+    <script src="javascrip/profile.js"></script>
+    <script src="javascrip/newPost.js"></script>
+
+</head>
+<body>
+<header>
+    <input type="text" id="userIdTextbox">
+    <button id="searchButton" onclick="searchProfile()">Search</button>
+    <button id="viewProfileButton" onclick="window.location.href= 'my-profile.html'">View Profile</button>
+    <button id="newPostButton" onclick="window.location.href = 'new-post.html'">Create New Post</button>
+    <button id="homeButton" onclick="window.location.href = 'main-page.html'">Home</button>
+    <button id="logOut" onclick="logOut()">Log Out</button>
+</header>
+
+<form id="postForm">
+    <textarea id="textInput" placeholder="Scrieți mesajul aici..."></textarea>
+    <button type="button" id="postButton" onclick="sendPost()">Post</button>
+</form>
+
+<footer>Fii Practic Proiect</footer>
+
+</body>
+</html>

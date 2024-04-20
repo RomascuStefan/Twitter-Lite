@@ -5,7 +5,6 @@ public class LogInForm {
     private String credential;
     private String password;
 
-    // Getters and setters
     public String getAuthType() {
         return authType;
     }

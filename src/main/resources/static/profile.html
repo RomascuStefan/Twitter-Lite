@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" type="text/css" href="css/mainPage.css">
+    <script src="javascrip/profile.js"></script>
+
+
+</head>
+<body onload="initializePage()">
+<header>
+    <input type="text" id="userIdTextbox">
+    <button id="searchButton" onclick="searchProfile()">Search</button>
+    <button id="viewProfileButton" onclick="window.location.href= 'my-profile.html'">View Profile</button>
+    <button id="newPostButton" onclick="window.location.href = 'new-post.html'">Create New Post</button>
+    <button id="homeButton" onclick="window.location.href = 'main-page.html'">Home</button>
+    <button id="logOut" onclick="logOut()">Log Out</button>
+
+</header>
+<h1 id="userIdHeading"></h1>
+<span id="numbers"></span><br>
+<span id="followButtonContainer"></span>
+<span id="postsContainer"></span>
+<footer>Fii Practic Proiect</footer>
+
+</body>
+</html>

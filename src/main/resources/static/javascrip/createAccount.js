@@ -1,7 +1,6 @@
 function handleCreateAccountForm(event) {
-    event.preventDefault(); // Prevenim comportamentul implicit de trimitere a formularului
+    event.preventDefault();
 
-    // Colectăm datele formularului
     const formData = {
         id: document.getElementById("username").value,
         first_name: document.getElementById("firstName").value,
@@ -10,7 +9,6 @@ function handleCreateAccountForm(event) {
         password: document.getElementById("password").value
     };
 
-    // Trimitem cererea AJAX
     fetch('/createAccountForm', {
         method: 'POST',
         headers: {

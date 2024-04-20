@@ -14,13 +14,14 @@ public interface UserService {
 
     User getUserByEmail(String email);
 
-    void updateUser(String id, User user);
-
-    void patchUser(String id, Map<String, String> user);
-
-    void deleteUser(String id);
-
     void authenticateUser(LogInForm logInForm);
 
+    void followUser(String credential, String followCredential);
+    void unfollowUser(String credential, String followCredential);
+    boolean isFollowing(String credential, String followCredential);
+    int getFollowingNumber(String credential);
+    int getFollowerNumber(String credential);
+    List<String> getUsersListFollowedBy(String credential) throws Exception;
+    List<String> getUsersListFollowing(String credential) throws  Exception;
 
 }

@@ -1,20 +1,17 @@
 function handleLoginForm(event) {
-    event.preventDefault(); // Prevenim comportamentul implicit de trimitere a formularului
+    event.preventDefault();
 
-    // Colectăm datele formularului
     const authType = document.getElementById("authType").value;
     const credential = document.getElementById("credential").value;
     const password = document.getElementById("password").value;
 
-    // Construim obiectul cu datele de autentificare
     const formData = {
         authType: authType,
         credential: credential,
         password: password
     };
 
-    // Trimitem cererea AJAX
-    fetch('/logIn', {
+    fetch('/logInForm', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -23,7 +20,10 @@ function handleLoginForm(event) {
     })
         .then(response => {
             if (response.ok) {
-                window.location.href = '../mainPage.html'; // Redirectăm către pagina principală în caz de succes
+                sessionStorage.setItem("authType",formData.authType);
+                sessionStorage.setItem("credential",formData.credential);
+
+                window.location.href = '../main-page.html'; // Redirectăm către pagina principală în caz de succes
             } else {
                 console.error('LogIn esuat');
                 response.text().then(errorMessage => {

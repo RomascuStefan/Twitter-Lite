@@ -1,0 +1,90 @@
+/* Stilizarea generală a paginii */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 10px;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #003d7a;
+}
+
+#postsContainer {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+.post {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post h3 {
+    font-size: 16px;
+    color: #007bff;
+}
+
+.post p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
+}
+
+.post span {
+    font-size: 12px;
+    color: #555;
+    display: block; /* Asigură că elementul este afișat pe o nouă linie */
+    margin-top: 10px;
+}
+
+/* Stil pentru butoane și inputuri */
+input[type="text"] {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+footer {
+    text-align: center;
+    background-color: #007bff;
+    color: #FFF;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#numbers {
+    font-size: 14px;
+    color: #808080;
+    font-weight: 300;
+    font-family: Arial, sans-serif;
+    margin-top: 10px;
+    display: block;
+}
